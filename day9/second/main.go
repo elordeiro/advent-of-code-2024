@@ -49,12 +49,10 @@ func main() {
 		}
 	}
 
-	filesLen := len(files) - 1
-	spacesLen := len(spaces)
-	for fi := filesLen; fi >= 0; fi-- {
+	for fi := len(files) - 1; fi >= 0; fi-- {
 		f := files[fi]
 		x := decoded[f.i]
-		for si := 0; si < spacesLen; si++ {
+		for si := 0; si < len(spaces); si++ {
 			s := spaces[si]
 			if s.len >= f.len && s.i < f.i {
 				for range f.len {
