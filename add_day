@@ -1,0 +1,9 @@
+day=$1
+
+mkdir day$day
+mkdir day$day/first
+mkdir day$day/second
+cp skeleton.go day$day/first/main.go
+cp skeleton.go day$day/second/main.go
+touch day$day/input.txt
+touch day$day/test.txt
