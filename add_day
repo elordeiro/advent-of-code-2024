@@ -6,4 +6,6 @@ mkdir day$day/second
 cp skeleton.go day$day/first/main.go
 cp skeleton.go day$day/second/main.go
 touch day$day/input.txt
-touch day$day/test.txt
+touch day$day/test1.txt
+touch day$day/test2.txt
+touch day$day/test3.txt

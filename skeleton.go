@@ -1,19 +1,29 @@
 package main
 
 import (
-	"bufio"
-	"os"
+	"fmt"
 )
 
+func solve(fileName string) int {
+	return 0
+}
+
 func main() {
-	input, err := os.Open("../input.txt")
-	if err != nil {
-		os.Exit(1)
+	tests := []struct {
+		fileName string
+		want     int
+	}{
+		{"../test1.txt", 0},
+		{"../test2.txt", 0},
+		{"../test3.txt", 0},
+		{"../input.txt", 0},
 	}
-	defer input.Close()
-	scanner := bufio.NewScanner(input)
 
-	for scanner.Scan() {
-
+	for i, test := range tests {
+		got := solve(test.fileName)
+		if got != test.want {
+			panic(fmt.Sprintf("Failed Test %d\n\tGot %d, Want %d", i+1, got, test.want))
+		}
+		fmt.Printf("%s: %d\n", test.fileName, got)
 	}
 }
