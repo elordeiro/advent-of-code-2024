@@ -19,10 +19,11 @@ func main() {
 		{"../input.txt", 0},
 	}
 
-	for i, test := range tests {
+	for _, test := range tests {
 		got := solve(test.fileName)
 		if got != test.want {
-			panic(fmt.Sprintf("Failed Test %d\n\tGot %d, Want %d", i+1, got, test.want))
+			fmt.Printf("Failed Test %s\n\tGot %d, Want %d\n", test.fileName, got, test.want)
+			continue
 		}
 		fmt.Printf("%s: %d\n", test.fileName, got)
 	}
