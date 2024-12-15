@@ -2,8 +2,10 @@ package utils
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func ReadMatrix(fileName string) [][]byte {
@@ -14,6 +16,23 @@ func ReadMatrix(fileName string) [][]byte {
 	for scanner.Scan() {
 		text := scanner.Bytes()
 		mat = append(mat, append([]byte{}, text...))
+	}
+	return mat
+}
+
+func ReadIntMatrix(fileName string) [][]int {
+	scanner, fp := FileScanner(fileName)
+	defer fp.Close()
+
+	var mat [][]int
+	for scanner.Scan() {
+		text := scanner.Text()
+		parts := strings.Split(text, " ")
+		var row []int
+		for _, p := range parts {
+			row = append(row, Atoi(p))
+		}
+		mat = append(mat, row)
 	}
 	return mat
 }
@@ -57,4 +76,10 @@ func AtoiS(slice []string) []int {
 		intSlice = append(intSlice, Atoi(e))
 	}
 	return intSlice
+}
+
+func PrintMatrix[T string | []byte](mat []T) {
+	for _, row := range mat {
+		fmt.Println(string(row))
+	}
 }
