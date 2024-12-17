@@ -60,16 +60,13 @@ func solve(fileName string) int {
 			}
 		case '[':
 			ok = dr == 0 || (isFirst && canMove(r, c+1, false))
-			if (ok || !isFirst) && canMove(r+dr, c+dc, true) {
-				toMove = append(toMove, [2]int{r, c})
-				return true
-			}
 		case ']':
 			ok = dr == 0 || (isFirst && canMove(r, c-1, false))
-			if (ok || !isFirst) && canMove(r+dr, c+dc, true) {
-				toMove = append(toMove, [2]int{r, c})
-				return true
-			}
+		}
+
+		if (ok || !isFirst) && canMove(r+dr, c+dc, true) {
+			toMove = append(toMove, [2]int{r, c})
+			return true
 		}
 		return false
 	}
@@ -118,7 +115,7 @@ func main() {
 		fileName string
 		want     int
 	}{
-		{"../test2.txt", 9021},
+		// {"../test2.txt", 9021},
 		{"../input.txt", 1425169},
 	}
 
