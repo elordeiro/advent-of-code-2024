@@ -49,6 +49,24 @@ func ReadStringMatrix(fileName string) []string {
 	return mat
 }
 
+// Read Comma separated Matrix
+func ReadCSMatrix(fileName string) [][]int {
+	scanner, fp := FileScanner(fileName)
+	defer fp.Close()
+
+	var mat [][]int
+	for scanner.Scan() {
+		text := scanner.Text()
+		parts := strings.Split(text, ",")
+		var row []int
+		for _, p := range parts {
+			row = append(row, Atoi(p))
+		}
+		mat = append(mat, row)
+	}
+	return mat
+}
+
 func ReadLine(fileName string) string {
 	scanner, fp := FileScanner(fileName)
 	defer fp.Close()
@@ -76,6 +94,13 @@ func AtoiS(slice []string) []int {
 		intSlice = append(intSlice, Atoi(e))
 	}
 	return intSlice
+}
+
+func Abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
 
 func PrintMatrix[T string | []byte](mat []T) {
