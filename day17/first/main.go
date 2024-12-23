@@ -19,7 +19,7 @@ type State struct {
 var Chrono State
 
 func parseInput(fileName string) {
-	input := utils.ReadStringMatrix(fileName)
+	input := utils.ReadStringSlice(fileName)
 	Chrono = State{}
 	fmt.Sscanf(input[0], "Register A: %d", &Chrono.A)
 	fmt.Sscanf(input[1], "Register B: %d", &Chrono.B)

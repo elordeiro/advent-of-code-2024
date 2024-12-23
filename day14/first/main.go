@@ -10,7 +10,7 @@ type Robot struct {
 }
 
 func solve(n, m int, fileName string) int {
-	list := utils.ReadStringMatrix(fileName)
+	list := utils.ReadStringSlice(fileName)
 
 	var robots []Robot
 	for _, e := range list {

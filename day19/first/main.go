@@ -8,7 +8,7 @@ import (
 )
 
 func parse(fileName string) ([]string, []string) {
-	input := utils.ReadStringMatrix(fileName)
+	input := utils.ReadStringSlice(fileName)
 	towels := strings.Split(input[0], ",")
 	for i, t := range towels {
 		towels[i] = strings.TrimSpace(t)

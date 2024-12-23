@@ -15,7 +15,7 @@ type Claw struct {
 }
 
 func solve(fileName string) int {
-	input := utils.ReadStringMatrix(fileName)
+	input := utils.ReadStringSlice(fileName)
 
 	var claws []Claw
 

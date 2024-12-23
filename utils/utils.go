@@ -37,7 +37,7 @@ func ReadIntMatrix(fileName string) [][]int {
 	return mat
 }
 
-func ReadStringMatrix(fileName string) []string {
+func ReadStringSlice(fileName string) []string {
 	scanner, fp := FileScanner(fileName)
 	defer fp.Close()
 

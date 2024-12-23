@@ -20,7 +20,7 @@ var Chrono State
 var OrgChrono State
 
 func parseInput(fileName string) {
-	input := utils.ReadStringMatrix(fileName)
+	input := utils.ReadStringSlice(fileName)
 	OrgChrono = State{}
 	fmt.Sscanf(input[0], "Register A: %d", &OrgChrono.A)
 	fmt.Sscanf(input[1], "Register B: %d", &OrgChrono.B)
